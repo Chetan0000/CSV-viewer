@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/viewer.css">
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <span>CSV-Upload</span>
+    </nav>
+    <div class="filename">
+        <%= fileName %>
+        
+    </div>
+
+
+
+    <!-- Search Bar  -->
+
+    <div class="searchBar">
+        <div class="search">
+            <input type="text" id="Search-input" placeholder="Search Data">
+            <button id="go" class="search-btn" type="button" ><i class="fa-solid fa-magnifying-glass"></i></button>
+        </div>
+        <div class="rows">
+            <p id="total-rows">Total-rows: <%= length %></p>
+        </div>
+    </div>
+
+    <div class="result-aria">
+        <table>
+            <thead>
+                <tr>
+                <% for(let h of head) { %>
+                    <th><%= h %></th>
+                <% } %>
+                </tr>
+            </thead>
+            <tbody>
+                <% for(let row of data) { %>
+                <tr>
+                    <% for(let key of Object.keys(row)) { %>
+                        <td><%= row[key] %></td>
+                    <% } %>
+                </tr>
+                <% } %>
+            </tbody>
+        </table>
+    </div>
+
+
+
+
+    <script src="https://kit.fontawesome.com/d914beddb0.js" crossorigin="anonymous"></script>
+    <script src="/js/viewer.js"></script>
+</body>
+</html>

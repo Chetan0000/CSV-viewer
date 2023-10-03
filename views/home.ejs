@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/home.css">
+    <title><%= title %></title>
+</head>
+<body>
+    <!-- nav bar  -->
+    <nav>
+        <span>CSV-Upload</span>
+    </nav>
+    <!--  header section -->
+    <header>
+        <h1>Upload your files here</h1>
+        <p>Reads CSV file and displays it in table form</p>
+    </header>
+    
+
+    <!-- file upload section  -->
+    <div class="upload-cunt">
+        <form action="/upload" method="post" enctype="multipart/form-data">
+            <div class="input-container">
+                <input type="file" id="csvFile" name="file" accept=".csv">
+                <button class="upload-btn">Upload</button>
+            </div>
+        </form>
+    </div>
+    
+
+    <!-- DB status -->
+
+
+    <!-- file list section -->
+    <div class="list-nav">
+        <h1>Uploaded files</h1>
+    </div>
+    <% if(files.length==0) { %>
+        <div class="no-file">No files to show!</div>
+    <% } else {%>
+            <div class="file-list">
+            
+                <div class="list-head">
+                    <table>
+                        <thead>
+                            <tr>
+                            <th>Name</th>
+                            <th>Date</th>
+                            <th>Time (UTC)</th>
+                            <th>View</th>
+                            <th>Delete</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <% for(file of files){ %>
+                                <tr>
+                                    <td><%= file.fileName %></td>
+                                    <td><%=file.createdAt.toLocaleDateString()%></td>
+                                    <td><%=file.createdAt.toLocaleTimeString()%></td>
+                                    <td><a href="/view/<%= file.file %>" class="view-Link"><i class="fa-solid fa-arrow-up-right-from-square"></i></a></td>
+                                    <td><a href="/delete/<%= file.file %>" class="delete-Link"><i class="fa-solid fa-trash"></i></a></td>
+                                </tr>
+                            <% } %>
+                            
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+    <% } %>
+    
+
+
+
+
+    <div class="space">
+        
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/d914beddb0.js" crossorigin="anonymous"></script>
+</body>
+</html>

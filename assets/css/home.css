@@ -1,0 +1,114 @@
+
+:root{
+    --pBG:#272829;
+    --sBG:#61677A;
+    --tBG:#D8D9DA;
+    --fBG:#FFF6E0;
+
+}
+
+body{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    gap: 20px;
+}
+
+nav{
+    width: 100vw;
+    height: 60px;
+    color:#fff;
+    background-color:var(--pBG);
+    font-size: 25px;
+    font-weight: bold;
+    padding: 10px;
+
+}
+header{
+    text-align: center;
+}
+
+.upload-cunt{
+    width: 1065px;
+    height: 200px;
+    border: 1px dashed var(--pBG);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.upload-btn{
+    background-color: var(--sBG);
+}
+.list-nav{
+    background-color: var(--pBG);
+    color: #fff;
+    width: 1065px;
+    height: 50px;
+    font-size: 25px;
+    text-align: center;
+}
+
+/* files list */
+.list-head{
+    width: 1065px;
+}
+table {
+    border-collapse: collapse;
+    width: 100%;
+    margin: auto;
+}
+thead{
+    height: 30px;
+    font-size: 18px;
+    font-weight: bolder;
+    background-color: var(--sBG);
+}
+tbody{
+    height: 30px;
+    background-color: var(--tBG);
+    font-size: 15px;
+    font-weight: lighter;
+}
+
+th, td {
+    text-align: left;
+    padding: 12px;
+  }
+
+thead>tr{
+    width: 1065px;
+    
+    font-weight: bolder;
+    
+}
+
+tbody>tr{
+    width: 1065px;
+    border-bottom: 1px solid var(--sBG);
+    font-weight: lighter;
+    text-align: center;
+}
+
+/* hover on links  */
+
+.view-Link:hover{
+    scale: 1.1;
+    transition: 0.3s ease-in-out;
+}
+.delete-Link{
+    color: red;
+}
+.delete-Link:hover{
+    scale: 1.1;
+    transition: 0.3s ease-in-out;
+}
+
+
+
+.space{
+    height: 100px;
+}
+
+
