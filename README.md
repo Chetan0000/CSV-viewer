@@ -13,10 +13,10 @@ This app allows you to read and search in TXT/CSV files, upload CSV files, and v
 
 ### Installation and Usage
 
-1. Clone the repo: `git clone https://github.com/Chetan0000/CSV-viewer.git`
+1. Clone the repo: [git clone](https://github.com/Chetan0000/CSV-viewer.git) `https://github.com/Chetan0000/CSV-viewer.git`
 2. Install the dependencies: `npm install`
 3. Start the server: `npm start`
-4. Visit the app in your browser: `https://csv-viewer-y1gv.onrender.com/`
+4. Visit the app in your browser: [here](https://csv-viewer-y1gv.onrender.com/) `https://csv-viewer-y1gv.onrender.com/`
 
 ### Usage
 
